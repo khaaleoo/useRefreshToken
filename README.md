@@ -37,3 +37,58 @@ $ yarn add userefreshtoken
 
 - onRefreshTokenSuccess: Callback function. This'll be triggered after refresh token succeed
 
+
+## Demo
+
+Insert gif or link to demo
+
+```
+import axios from 'axios'
+import useRefreshToken from 'userefreshtoken'
+
+const axios_instance = axios.create({
+  headers: {
+    'Content-Type': 'application/json',
+  },
+})
+
+useRefreshToken.install({
+  axiosIns: axios_instance,
+  endpoint: 'https://abc/auth/userrefreshtoken',
+  getToken: () => localStorage.getItem('access_token'),
+  getRefreshToken: () => localStorage.getItem('refresh_token'),
+  onRefreshTokenSuccess: (payload: any) => {
+    localStorage.setItem('access_token', payload.access_token || '')
+  },
+})
+
+
+// Sample requests
+axios_instance
+  .get('https://abc/store/get-scope-of-user')
+  .then(res => {
+    console.log(res)
+  })
+  .catch(err => {
+    console.log(err)
+  })
+
+axios_instance
+  .get('https://abc/store/get-scope-of-user')
+  .then(res => {
+    console.log(res)
+  })
+  .catch(err => {
+    console.log(err)
+  })
+
+axios_instance
+  .get('https://abc/store/get-scope-of-user')
+  .then(res => {
+    console.log(res)
+  })
+  .catch(err => {
+    console.log(err)
+  })
+
+```
