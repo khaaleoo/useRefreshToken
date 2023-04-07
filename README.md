@@ -62,10 +62,16 @@ useRefreshToken.install({
   },
 })
 
-
-// Sample requests
+/*
+  Sample requests
+  Replace with your own API
+  Suppose that this API will return 401 if access token is expired, and you need to refresh token to get new access token
+  Then, only one request will be triggered to refresh token
+  After that, all concurrent requests will be triggered
+*/
+const resourceUrl = https://abc/store/get-scope-of-user
 axios_instance
-  .get('https://abc/store/get-scope-of-user')
+  .get(resourceUrl)
   .then(res => {
     console.log(res)
   })
@@ -74,7 +80,7 @@ axios_instance
   })
 
 axios_instance
-  .get('https://abc/store/get-scope-of-user')
+  .get(resourceUrl)
   .then(res => {
     console.log(res)
   })
@@ -83,7 +89,7 @@ axios_instance
   })
 
 axios_instance
-  .get('https://abc/store/get-scope-of-user')
+  .get(resourceUrl)
   .then(res => {
     console.log(res)
   })
