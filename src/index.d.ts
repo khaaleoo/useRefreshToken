@@ -15,6 +15,9 @@ type TFunctions = {
   getToken: () => string;
   getRefreshToken: () => string;
 
+  // Handlers
+  handleRefreshToken?: (...args: any[]) => Promise<any>;
+
   // Callback
   onRefreshTokenSuccess: (payload: any) => void;
 };

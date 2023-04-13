@@ -1,7 +1,7 @@
 {
   "name": "use-refresh-token",
   "author": "Kha Leo",
-  "version": "1.2.1",
+  "version": "1.3.1",
   "description": "",
   "module": "dist/index.esm.js",
   "main": "dist/index.js",

@@ -9,17 +9,17 @@ If there are many requests 401 at the same time, only one refresh token'll be tr
 Install with pnpm
 
 ```bash
-$ pnpm i userefreshtoken
+$ pnpm i use-refresh-token
 ```
 
 With npm
 ```bash
-$ npm i userefreshtoken
+$ npm i use-refresh-token
 ```
 
 With yarn
 ```bash
-$ yarn add userefreshtoken
+$ yarn add use-refresh-token
 ```
 
 
@@ -35,6 +35,8 @@ $ yarn add userefreshtoken
 
 - getRefreshToken: Function. Return refresh token - must be string
 
+- handleRefreshToken: Function. This'll be triggered before refresh token. You can use this to add custom headers, etc.
+
 - onRefreshTokenSuccess: Callback function. This'll be triggered after refresh token succeed
 
 
@@ -44,7 +46,7 @@ Insert gif or link to demo
 
 ```
 import axios from 'axios'
-import useRefreshToken from 'userefreshtoken'
+import useRefreshToken from 'use-refresh-token'
 
 const axios_instance = axios.create({
   headers: {
@@ -54,7 +56,7 @@ const axios_instance = axios.create({
 
 useRefreshToken.install({
   axiosIns: axios_instance,
-  endpoint: 'https://abc/auth/userrefreshtoken',
+  endpoint: 'https://abc/auth/refresh-token',
   getToken: () => localStorage.getItem('access_token'),
   getRefreshToken: () => localStorage.getItem('refresh_token'),
   onRefreshTokenSuccess: (payload: any) => {

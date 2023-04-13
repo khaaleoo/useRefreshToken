@@ -16,6 +16,7 @@
         authHeaderKey = constants.AUTH_HEADER_KEY,
         getToken,
         getRefreshToken,
+        handleRefreshToken,
         onRefreshTokenSuccess
       } = options;
       axiosIns.interceptors.request.use((config) => {

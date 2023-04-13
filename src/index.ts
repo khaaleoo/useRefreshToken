@@ -1,4 +1,5 @@
 import { GlobalThis, TOptions } from "./index.d";
+
 /**
  * Constants
  * **/
@@ -30,6 +31,7 @@ export default {
 
       getToken,
       getRefreshToken,
+      handleRefreshToken,
       onRefreshTokenSuccess,
     } = options;
 
